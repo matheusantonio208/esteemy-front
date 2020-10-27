@@ -4,6 +4,8 @@ dependencies:
   '@testing-library/react': 9.5.0_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 7.2.1
   axios: 0.21.0
+  date-fns: 2.0.0-beta.5
+  date-fns-tz: 1.0.12_date-fns@2.0.0-beta.5
   eslint-config-prettier: 6.14.0_eslint@6.8.0
   eslint-plugin-prettier: 3.1.4_eslint@6.8.0+prettier@2.1.2
   history: 5.0.0
@@ -13,6 +15,8 @@ dependencies:
   prop-types: 15.7.2
   react: 17.0.1
   react-dom: 17.0.1_react@17.0.1
+  react-icons: 3.11.0_react@17.0.1
+  react-perfect-scrollbar: 1.5.8_react-dom@17.0.1+react@17.0.1
   react-redux: 7.2.1_380dc38591053d98779d1f25fc7202b9
   react-router-dom: 5.2.0_react@17.0.1
   react-scripts: 3.4.4
@@ -26,6 +30,7 @@ dependencies:
   styled-components: 5.2.0_react-dom@17.0.1+react@17.0.1
   yup: 0.29.3
 devDependencies:
+  babel-eslint: 10.1.0_eslint@6.8.0
   babel-plugin-root-import: 6.6.0
   customize-cra: 1.0.0
   eslint: 6.8.0
@@ -81,7 +86,6 @@ packages:
       '@babel/types': 7.12.1
       jsesc: 2.5.2
       source-map: 0.5.7
-    dev: false
     resolution:
       integrity: sha512-DB+6rafIdc9o72Yc3/Ph5h+6hUjeOp66pF0naQBgUFFuPqzQwIlPTm3xZR7YNvduIMtkDIj2t21LSQwnbCrXvg==
   /@babel/helper-annotate-as-pure/7.10.4:
@@ -167,13 +171,11 @@ packages:
       '@babel/helper-get-function-arity': 7.10.4
       '@babel/template': 7.10.4
       '@babel/types': 7.12.1
-    dev: false
     resolution:
       integrity: sha512-YdaSyz1n8gY44EmN7x44zBn9zQ1Ry2Y+3GTA+3vH6Mizke1Vw0aWDM66FOYEPw8//qKkmqOckrGgTYa+6sceqQ==
   /@babel/helper-get-function-arity/7.10.4:
     dependencies:
       '@babel/types': 7.12.1
-    dev: false
     resolution:
       integrity: sha512-EkN3YDB+SRDgiIUnNgcmiD361ti+AVbL3f3Henf6dqqUyr5dMsorno0lJWJuLhDhkI5sYEpgj6y9kB8AOU1I2A==
   /@babel/helper-hoist-variables/7.10.4:
@@ -256,7 +258,6 @@ packages:
   /@babel/helper-split-export-declaration/7.11.0:
     dependencies:
       '@babel/types': 7.12.1
-    dev: false
     resolution:
       integrity: sha512-74Vejvp6mHkGE+m+k5vHY93FX2cAtrw1zXrZXRlG4l410Nm9PxfEiVTn1PjDPV5SnmieiueY4AFg2xqhNFuuZg==
   /@babel/helper-validator-identifier/7.10.4:
@@ -291,7 +292,6 @@ packages:
     resolution:
       integrity: sha512-i6rgnR/YgPEQzZZnbTHHuZdlE8qyoBNalD6F+q4vAFlcMEcqmkoG+mPqJYJCo63qPf74+Y1UZsl3l6f7/RIkmA==
   /@babel/parser/7.12.3:
-    dev: false
     engines:
       node: '>=6.0.0'
     hasBin: true
@@ -1268,7 +1268,6 @@ packages:
       '@babel/code-frame': 7.10.4
       '@babel/parser': 7.12.3
       '@babel/types': 7.12.1
-    dev: false
     resolution:
       integrity: sha512-ZCjD27cGJFUB6nmCB1Enki3r+L5kJveX9pq1SvAUKoICy6CZ9yD8xO086YXdYhvNjBdnekm4ZnaP5yC8Cs/1tA==
   /@babel/traverse/7.12.1:
@@ -1282,7 +1281,6 @@ packages:
       debug: 4.2.0
       globals: 11.12.0
       lodash: 4.17.20
-    dev: false
     resolution:
       integrity: sha512-MA3WPoRt1ZHo2ZmoGKNqi20YnPt0B1S0GTZEPhhd+hw2KGUzBlHuVunj6K4sNuK+reEvyiPwtp0cpaqLzJDmAw==
   /@babel/traverse/7.12.1_supports-color@5.5.0:
@@ -1306,7 +1304,6 @@ packages:
       '@babel/helper-validator-identifier': 7.10.4
       lodash: 4.17.20
       to-fast-properties: 2.0.0
-    dev: false
     resolution:
       integrity: sha512-BzSY3NJBKM4kyatSOWh3D/JJ2O3CVzBybHWxtgxnggaxEuaSTTDqeiSb/xk9lrkw2Tbqyivw5ZU4rT+EfznQsA==
   /@cnakazawa/watch/1.0.4:
@@ -2555,8 +2552,7 @@ packages:
       '@babel/types': 7.12.1
       eslint: 6.8.0
       eslint-visitor-keys: 1.3.0
-      resolve: 1.15.0
-    dev: false
+      resolve: 1.18.1
     engines:
       node: '>=6'
     peerDependencies:
@@ -3916,6 +3912,18 @@ packages:
     dev: false
     resolution:
       integrity: sha512-YTWYI9se1P55u58gL5GkQHW4P6VJBJ5iBT+B5a7i2Tjadhv52paJG0qHX4A0OR6/t52odI64KP2YvFpkDOi3eQ==
+  /date-fns-tz/1.0.12_date-fns@2.0.0-beta.5:
+    dependencies:
+      date-fns: 2.0.0-beta.5
+    dev: false
+    peerDependencies:
+      date-fns: '>=2.0.0-alpha.13'
+    resolution:
+      integrity: sha512-Ca+9pjGkU90XDHnclfSjz9o7g/ZqyYyYI0aCYmbf65P75oy8gktuaRslO3UPXl3ADgAnF9/KCykQkpU3/xvtWQ==
+  /date-fns/2.0.0-beta.5:
+    dev: false
+    resolution:
+      integrity: sha512-GS5yi964NDFNoja9yOdWFj9T97T67yLrUeJZgddHaVfc/6tHWtX7RXocuubmZkNzrZUZ9BqBOW7jTR5OoWjJ1w==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -5514,7 +5522,6 @@ packages:
     resolution:
       integrity: sha512-awConJSVCHVGND6x3tmMaKcQvwXLhjdkmomy2W+Goaui8YPgYgXJZewhg3fWC+DlfqqQuWg8AwqjGTD2nAPVWg==
   /globals/11.12.0:
-    dev: false
     engines:
       node: '>=4'
     resolution:
@@ -7006,7 +7013,6 @@ packages:
     resolution:
       integrity: sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=
   /jsesc/2.5.2:
-    dev: false
     engines:
       node: '>=4'
     hasBin: true
@@ -8337,6 +8343,10 @@ packages:
       node: '>=0.12'
     resolution:
       integrity: sha512-4Ejy1OPxi9f2tt1rRV7Go7zmfDQ+ZectEQz3VGUQhgq62HtIRPDyG/JtnwIxs6x3uNMwo2V7q1fMvKjb+Tnpqg==
+  /perfect-scrollbar/1.5.0:
+    dev: false
+    resolution:
+      integrity: sha512-NrNHJn5mUGupSiheBTy6x+6SXCFbLlm8fVZh9moIzw/LgqElN5q4ncR4pbCBCYuCJ8Kcl9mYM0NgDxvW+b4LxA==
   /performance-now/2.1.0:
     dev: false
     resolution:
@@ -9495,9 +9505,30 @@ packages:
     dev: false
     resolution:
       integrity: sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
+  /react-icons/3.11.0_react@17.0.1:
+    dependencies:
+      camelcase: 5.3.1
+      react: 17.0.1
+    dev: false
+    peerDependencies:
+      react: '*'
+    resolution:
+      integrity: sha512-JRgiI/vdF6uyBgyZhVyYJUZAop95Sy4XDe/jmT3R/bKliFWpO/uZBwvSjWEdxwzec7SYbEPNPck0Kff2tUGM2Q==
   /react-is/16.13.1:
     resolution:
       integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+  /react-perfect-scrollbar/1.5.8_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      perfect-scrollbar: 1.5.0
+      prop-types: 15.7.2
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+    peerDependencies:
+      react: '>=16.3.3'
+      react-dom: '>=16.3.3'
+    resolution:
+      integrity: sha512-bQ46m70gp/HJtiBOF3gRzBISSZn8FFGNxznTdmTG8AAwpxG1bJCyn7shrgjEvGSQ5FJEafVEiosY+ccER11OSA==
   /react-redux/7.2.1_380dc38591053d98779d1f25fc7202b9:
     dependencies:
       '@babel/runtime': 7.12.1
@@ -10546,7 +10577,6 @@ packages:
     resolution:
       integrity: sha1-dc449SvwczxafwwRjYEzSiu19BI=
   /source-map/0.5.7:
-    dev: false
     engines:
       node: '>=0.10.0'
     resolution:
@@ -11120,7 +11150,6 @@ packages:
     resolution:
       integrity: sha1-fSKbH8xjfkZsoIEYCDanqr/4P0M=
   /to-fast-properties/2.0.0:
-    dev: false
     engines:
       node: '>=4'
     resolution:
@@ -12021,8 +12050,11 @@ specifiers:
   '@testing-library/react': ^9.3.2
   '@testing-library/user-event': ^7.1.2
   axios: ^0.21.0
+  babel-eslint: ^10.1.0
   babel-plugin-root-import: ^6.5.0
   customize-cra: ^1.0.0
+  date-fns: ^2.0.0-beta.5
+  date-fns-tz: ^1.0.12
   eslint: ^6.6.0
   eslint-config-airbnb: ^18.2.0
   eslint-config-prettier: ^6.14.0
@@ -12040,6 +12072,8 @@ specifiers:
   react: ^17.0.0
   react-app-rewired: ^2.1.6
   react-dom: ^17.0.0
+  react-icons: ^3.11.0
+  react-perfect-scrollbar: ^1.5.8
   react-redux: ^7.2.1
   react-router-dom: ^5.2.0
   react-scripts: 3.4.4
